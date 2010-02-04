@@ -61,6 +61,14 @@ qx.Class.define("twitter.Application",
       var main = new twitter.MainWindow();
       main.moveTo(50, 30);
       main.open();
+      
+      main.addListener("reload", function() {
+        this.debug("reload");
+      }, this);
+      
+      main.addListener("post", function(e) {
+        this.debug("post: " + e.getData());
+      }, this);
     }
   }
 });
