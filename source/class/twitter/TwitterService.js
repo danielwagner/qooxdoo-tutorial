@@ -9,6 +9,11 @@ qx.Class.define("twitter.TwitterService",
     }
   },
   
+  
+  events : {
+    "postOk" : "qx.event.type.Event"
+  },
+  
 
   members :
   {
@@ -23,6 +28,36 @@ qx.Class.define("twitter.TwitterService",
       } else {
         this.__store.reload();
       }
+    },
+    
+    
+    post : function(message) 
+    {
+      // get the username and password
+      var username = prompt("Username");
+      var password = prompt("Password");
+      
+      var query = "use 'http://www.yqlblog.net/samples/twitter.status.xml';" + 
+                  "insert into twitter.status (status,username,password)" + 
+                  "values ('" + message + "', '" + username + "', '" + password + "')";
+
+      var store = new qx.data.store.Yql(query, null, true);
+      store.addListener("loaded", function(e) {
+        var model = e.getData();
+        try {
+          var returnedText = model.getQuery().getResults().getStatus().getText();
+          // seems like everything is ok
+          if (returnedText == message) {
+            this.fireEvent("postOk");
+          }
+        } catch (e) {
+          try {
+            alert(model.getError().getDescription());
+          } catch (e) {
+            alert("Could not post."); 
+          }
+        }
+      }, this);
     }
   }
 });
