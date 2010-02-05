@@ -35,8 +35,8 @@ qx.Class.define("twitter.MainWindow",
     }, this);
     
     // list
-    var list = new qx.ui.form.List();
-    this.add(list, {row: 1, column: 0, colSpan: 2});
+    this.__list = new qx.ui.form.List();
+    this.add(this.__list, {row: 1, column: 0, colSpan: 2});
     
     // textarea
     var textarea = new qx.ui.form.TextArea();
@@ -63,5 +63,14 @@ qx.Class.define("twitter.MainWindow",
   {
     "reload" : "qx.event.type.Event",
     "post" : "qx.event.type.Data"
+  },
+  
+  
+  members : {
+    __list: null,
+    
+    getList : function() {
+      return this.__list;
+    }
   }
 });

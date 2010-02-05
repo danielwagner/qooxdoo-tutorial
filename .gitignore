@@ -1,2 +1,3 @@
 source/script/*
 build/*
+*.DS_Store
