@@ -62,13 +62,33 @@ qx.Class.define("twitter.Application",
       main.moveTo(50, 30);
       main.open();
       
+      var service = new twitter.TwitterService();
+      
+      // reload handling
       main.addListener("reload", function() {
-        this.debug("reload");
+        service.fetchTweets();
       }, this);
       
       main.addListener("post", function(e) {
         this.debug("post: " + e.getData());
       }, this);
+      
+      // create the controller
+      var controller = new qx.data.controller.List(null, main.getList());
+      controller.setLabelPath("text");
+      controller.setIconPath("user.profile_image_url");
+      controller.setDelegate({
+        configureItem : function(item) {
+          item.getChildControl("icon").setWidth(48);
+          item.getChildControl("icon").setHeight(48);
+          item.getChildControl("icon").setScale(true);
+          item.setRich(true);
+        }
+      });
+      service.bind("tweets", controller, "model");
+      
+      // start the loading on startup
+      service.fetchTweets();
     }
   }
 });
