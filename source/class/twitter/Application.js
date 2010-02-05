@@ -64,13 +64,20 @@ qx.Class.define("twitter.Application",
       
       var service = new twitter.TwitterService();
       
+      // handler after posting a tweet
+      service.addListener("postOk", function() {
+        main.clearPostMessage();
+        service.fetchTweets();
+      }, this);
+      
       // reload handling
       main.addListener("reload", function() {
         service.fetchTweets();
       }, this);
       
+      // post handling
       main.addListener("post", function(e) {
-        this.debug("post: " + e.getData());
+        service.post(e.getData());
       }, this);
       
       // create the controller

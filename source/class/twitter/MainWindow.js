@@ -39,10 +39,10 @@ qx.Class.define("twitter.MainWindow",
     this.add(this.__list, {row: 1, column: 0, colSpan: 2});
     
     // textarea
-    var textarea = new qx.ui.form.TextArea();
-    this.add(textarea, {row: 2, column: 0});
-    textarea.setPlaceholder("Enter your message here...");
-    textarea.addListener("input", function(e) {
+    this.__textarea = new qx.ui.form.TextArea();
+    this.add(this.__textarea, {row: 2, column: 0});
+    this.__textarea.setPlaceholder("Enter your message here...");
+    this.__textarea.addListener("input", function(e) {
       var value = e.getData();
       postButton.setEnabled(value.length < 140 && value.length > 0);
     }, this);
@@ -52,7 +52,7 @@ qx.Class.define("twitter.MainWindow",
     this.add(postButton, {row: 2, column: 1});
     postButton.setToolTipText("Post this message on twitter.");
     postButton.addListener("execute", function() {
-      this.fireDataEvent("post", textarea.getValue());
+      this.fireDataEvent("post", this.__textarea.getValue());
     }, this);
     postButton.setWidth(60);
     postButton.setEnabled(false);
@@ -67,10 +67,17 @@ qx.Class.define("twitter.MainWindow",
   
   
   members : {
-    __list: null,
+    __list : null,
+    __textarea : null,
+    
     
     getList : function() {
       return this.__list;
+    },
+    
+    
+    clearPostMessage : function() {
+      this.__textarea.setValue(null);
     }
   }
 });
