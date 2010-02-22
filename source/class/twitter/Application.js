@@ -31,6 +31,9 @@ qx.Class.define("twitter.Application",
 
   members :
   {
+    __loginWindow : null,
+
+    
     /**
      * This method contains the initial application code and gets called 
      * during startup of the application
@@ -77,7 +80,8 @@ qx.Class.define("twitter.Application",
       
       // post handling
       main.addListener("post", function(e) {
-        service.post(e.getData());
+        var msg = e.getData();
+        service.post(msg);
       }, this);
       
       // create the controller
@@ -94,8 +98,14 @@ qx.Class.define("twitter.Application",
       });
       service.bind("tweets", controller, "model");
       
-      // start the loading on startup
-      service.fetchTweets();
+      // show the login window on startup
+      this.__loginWindow = new twitter.LoginWindow();
+      this.__loginWindow.addListener("changeLoginData", function(ev) {
+        var loginData = ev.getData();
+        service.fetchTweets(loginData.username, loginData.password);   
+      });
+      this.__loginWindow.moveTo(320,30);
+      this.__loginWindow.open();      
     }
   }
 });
