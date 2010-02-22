@@ -77,7 +77,19 @@ qx.Class.define("twitter.Application",
       
       // post handling
       main.addListener("post", function(e) {
-        service.post(e.getData());
+        var msg = e.getData();
+        if (!this.__loginWindow) {
+          this.__loginWindow = new twitter.LoginWindow();
+          this.__loginWindow.addListener("changeLoginData", function(ev) {
+            var loginData = ev.getData();
+            service.post(msg, loginData.username, loginData.password);    
+          });
+          this.__loginWindow.moveTo(320,30);
+          this.__loginWindow.open();
+        } 
+        else {
+          this.__loginWindow.open();
+        }
       }, this);
       
       // create the controller

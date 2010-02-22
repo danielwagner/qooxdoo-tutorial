@@ -31,12 +31,8 @@ qx.Class.define("twitter.TwitterService",
     },
     
     
-    post : function(message) 
+    post : function(message, username, password) 
     {
-      // get the username and password
-      var username = prompt("Username");
-      var password = prompt("Password");
-      
       var query = "use 'http://www.yqlblog.net/samples/twitter.status.xml';" + 
                   "insert into twitter.status (status,username,password)" + 
                   "values ('" + message + "', '" + username + "', '" + password + "')";
