@@ -43,11 +43,11 @@ qx.Class.define("twitter.LoginWindow",
     var cancelbutton = new qx.ui.form.Button("Cancel");
     form.addButton(cancelbutton);
     cancelbutton.addListener("execute", function() {
-      //form.reset();
       this.close();
     }, this);
     
-    this.add(form.createView());
+    var renderer = new qx.ui.form.renderer.Single(form);
+    this.add(renderer);
     
   }
   
