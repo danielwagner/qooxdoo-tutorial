@@ -86,14 +86,29 @@ qx.Class.define("twitter.Application",
       
       // create the controller
       var controller = new qx.data.controller.List(null, main.getList());
-      controller.setLabelPath("text");
-      controller.setIconPath("user.profile_image_url");
       controller.setDelegate({
+        createItem : function() {
+          return new twitter.TweetView();  
+        },
+        
+        bindItem : function(controller, item, id) {
+          controller.bindProperty("text", "post", null, item, id);
+          controller.bindProperty("user.profile_image_url", "icon", null, item, id);
+          controller.bindProperty("created_at", "time", {
+            converter: function(data) {
+              if (qx.bom.client.Engine.MSHTML) {
+                data = Date.parse(data.replace(/( \+)/, " UTC$1"));
+              }
+              return new Date(data);
+            }
+          }, item, id);
+        },
+        
         configureItem : function(item) {
           item.getChildControl("icon").setWidth(48);
           item.getChildControl("icon").setHeight(48);
           item.getChildControl("icon").setScale(true);
-          item.setRich(true);
+          item.setMinHeight(52);
         }
       });
       service.bind("tweets", controller, "model");
