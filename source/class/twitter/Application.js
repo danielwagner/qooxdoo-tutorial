@@ -98,14 +98,7 @@ qx.Class.define("twitter.Application",
       });
       service.bind("tweets", controller, "model");
       
-      // show the login window on startup
-      this.__loginWindow = new twitter.LoginWindow();
-      this.__loginWindow.addListener("changeLoginData", function(ev) {
-        var loginData = ev.getData();
-        service.fetchTweets(loginData.username, loginData.password);   
-      });
-      this.__loginWindow.moveTo(320,30);
-      this.__loginWindow.open();      
+      service.fetchTweets();
     }
   }
 });
