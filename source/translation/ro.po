@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: you@your.org\n"
-"POT-Creation-Date: 2010-08-31 13:24+0100\n"
-"PO-Revision-Date: 2010-08-31 13:24+0100\n"
+"POT-Creation-Date: 2010-09-16 11:30+0200\n"
+"PO-Revision-Date: 2010-09-16 11:30+0200\n"
 "Last-Translator: you <you@your.org>\n"
 "Language-Team: Team <yourteam@your.org>\n"
 "MIME-Version: 1.0\n"
@@ -13,36 +13,36 @@ msgstr ""
 
 #: twitter/MainWindow.js:30
 msgid "Reload"
-msgstr ""
+msgstr "Reincarca"
 
 #: twitter/MainWindow.js:32
 msgid "Reload the tweets."
-msgstr ""
+msgstr "Reincarca tweet-urile"
 
 #: twitter/MainWindow.js:44
 msgid "Change the applications settings."
-msgstr ""
+msgstr "Schimba setarile aplicatiei"
 
 #: twitter/MainWindow.js:60
 msgid "Enter your message here..."
-msgstr ""
+msgstr "Introduce mesajul tau aici..."
 
 #: twitter/MainWindow.js:67
 msgid "Post"
-msgstr ""
+msgstr "Trimite"
 
 #: twitter/MainWindow.js:69
 msgid "Post this message on twitter."
-msgstr ""
+msgstr "Trimite acest mesaj pe twitter"
 
 #: twitter/SettingsWindow.js:8 twitter/MainWindow.js:42
 msgid "Preferences"
-msgstr ""
+msgstr "Preferinte"
 
 #: twitter/SettingsWindow.js:19
 msgid "$$languagename"
-msgstr "English"
+msgstr "Romanian"
 
 #: twitter/SettingsWindow.js:36
 msgid "Language"
-msgstr ""
+msgstr "Limba"

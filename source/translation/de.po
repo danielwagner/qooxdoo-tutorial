@@ -39,10 +39,10 @@ msgstr "Sende deine Nachricht an twitter."
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: twitter/SettingsWindow.js:20
+#: twitter/SettingsWindow.js:19
 msgid "$$languagename"
 msgstr "Deutsch"
 
-#: twitter/SettingsWindow.js:30
+#: twitter/SettingsWindow.js:36
 msgid "Language"
 msgstr "Sprache"
