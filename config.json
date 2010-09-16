@@ -31,10 +31,10 @@
   "let" :
   {
     "APPLICATION"  : "twitter",
-    "QOOXDOO_PATH" : "../trunk/qooxdoo",
+    "QOOXDOO_PATH" : "../qooxdoo-trunk/qooxdoo",
     "QXTHEME"      : "twitter.theme.Theme",
     "API_EXCLUDE"  : ["qx.test.*", "${APPLICATION}.theme.*", "${APPLICATION}.test.*"],
-    "LOCALES"      : [ "en" , "de", "ro"],
+    "LOCALES"      : [ "en" , "de" , "fr", "ro" ],
     "CACHE"        : "${TMPDIR}/cache",
     "ROOT"         : "."
   }

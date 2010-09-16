@@ -39,10 +39,18 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: twitter/SettingsWindow.js:19
+#: twitter/SettingsWindow.js:13
+msgid "Language"
+msgstr ""
+
+#: twitter/SettingsWindow.js:20
 msgid "$$languagename"
 msgstr "English"
 
-#: twitter/SettingsWindow.js:36
+#: twitter/SettingsWindow.js:13
 msgid "Language"
 msgstr ""
+
+#: twitter/SettingsWindow.js:20
+msgid "$$languagename"
+msgstr "English"

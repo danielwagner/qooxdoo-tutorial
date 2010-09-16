@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: you@your.org\n"
-"POT-Creation-Date: 2010-08-31 13:24+0100\n"
-"PO-Revision-Date: 2010-08-31 13:24+0100\n"
+"POT-Creation-Date: 2010-09-16 10:01+0100\n"
+"PO-Revision-Date: 2010-09-16 10:01+0100\n"
 "Last-Translator: you <you@your.org>\n"
 "Language-Team: Team <yourteam@your.org>\n"
 "MIME-Version: 1.0\n"
@@ -13,44 +13,36 @@ msgstr ""
 
 #: twitter/MainWindow.js:30
 msgid "Reload"
-msgstr "Neu Laden"
+msgstr "Recharger"
 
 #: twitter/MainWindow.js:32
 msgid "Reload the tweets."
-msgstr "tweets neu laden."
+msgstr "recharger les messages."
 
 #: twitter/MainWindow.js:44
 msgid "Change the applications settings."
-msgstr "Einstellungen der Anwendung ändern."
+msgstr "Changer les paramètres de l'application."
 
 #: twitter/MainWindow.js:60
 msgid "Enter your message here..."
-msgstr "Nachricht hier eingeben..."
+msgstr "Saisissez votre message ici..."
 
 #: twitter/MainWindow.js:67
 msgid "Post"
-msgstr "Absenden"
+msgstr "Envoyer"
 
 #: twitter/MainWindow.js:69
 msgid "Post this message on twitter."
-msgstr "Sende deine Nachricht an twitter."
+msgstr "Envoyer ce message sur twitter."
 
 #: twitter/SettingsWindow.js:8 twitter/MainWindow.js:42
 msgid "Preferences"
-msgstr "Einstellungen"
+msgstr "Préférences"
 
 #: twitter/SettingsWindow.js:13
 msgid "Language"
-msgstr "Sprache"
+msgstr "Langage"
 
 #: twitter/SettingsWindow.js:20
 msgid "$$languagename"
-msgstr "Deutsch"
-
-#: twitter/SettingsWindow.js:13
-msgid "Language"
-msgstr "Sprache"
-
-#: twitter/SettingsWindow.js:20
-msgid "$$languagename"
-msgstr "Deutsch"
+msgstr "Français"

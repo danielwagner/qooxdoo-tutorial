@@ -39,10 +39,10 @@ msgstr "Trimite acest mesaj pe twitter"
 msgid "Preferences"
 msgstr "Preferinte"
 
-#: twitter/SettingsWindow.js:19
-msgid "$$languagename"
-msgstr "Romanian"
-
-#: twitter/SettingsWindow.js:36
+#: twitter/SettingsWindow.js:13
 msgid "Language"
 msgstr "Limba"
+
+#: twitter/SettingsWindow.js:20
+msgid "$$languagename"
+msgstr "Romanian"
