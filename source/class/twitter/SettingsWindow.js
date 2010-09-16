@@ -10,6 +10,7 @@ qx.Class.define("twitter.SettingsWindow",
     
     var form = new qx.ui.form.Form();
     var radioGroup = new qx.ui.form.RadioButtonGroup();
+    form.add(radioGroup, this.tr("Language"));
 
     var localeManager = qx.locale.Manager.getInstance();
     var locales = localeManager.getAvailableLocales();
@@ -33,7 +34,6 @@ qx.Class.define("twitter.SettingsWindow",
       }
     };
 
-    form.add(radioGroup, this.tr("Language"));
     
     // get the model selection and listen to its change
     radioGroup.getModelSelection().addListener("change", function(e) {

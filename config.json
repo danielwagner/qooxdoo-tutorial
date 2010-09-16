@@ -34,7 +34,7 @@
     "QOOXDOO_PATH" : "../trunk/qooxdoo",
     "QXTHEME"      : "twitter.theme.Theme",
     "API_EXCLUDE"  : ["qx.test.*", "${APPLICATION}.theme.*", "${APPLICATION}.test.*"],
-    "LOCALES"      : [ "en" , "de" ],
+    "LOCALES"      : [ "en" , "de" , "fr" ],
     "CACHE"        : "${TMPDIR}/cache",
     "ROOT"         : "."
   }
