@@ -46,7 +46,7 @@ qx.Class.define("twitter.Application",
       this.base(arguments);
 
       // Enable logging in debug variant
-      if (qx.core.Variant.isSet("qx.debug", "on"))
+      if (qx.core.Environment.get("qx.debug"))
       {
         // support native logging capabilities, e.g. Firebug for Firefox
         qx.log.appender.Native;
@@ -96,7 +96,7 @@ qx.Class.define("twitter.Application",
           controller.bindProperty("user.profile_image_url", "icon", null, item, id);
           controller.bindProperty("created_at", "time", {
             converter: function(data) {
-              if (qx.bom.client.Engine.MSHTML) {
+              if (qx.core.Environment.get("browser.name") == "ie") {
                 data = Date.parse(data.replace(/( \+)/, " UTC$1"));
               }
               return new Date(data);
