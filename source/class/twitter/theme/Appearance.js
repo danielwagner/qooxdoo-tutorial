@@ -22,6 +22,14 @@ qx.Theme.define("twitter.theme.Appearance",
           textColor: "tweet-time"
         }
       }
+    },
+    
+    "toolbar" : {
+      style : function() {
+        return {
+          backgroundColor : "window-border-inner"
+        }
+      }
     }
   }
 });
