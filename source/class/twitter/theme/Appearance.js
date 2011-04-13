@@ -14,5 +14,14 @@ qx.Theme.define("twitter.theme.Appearance",
 
   appearances :
   {
+    "tweet-view" : {},
+    
+    "tweet-view/time" : {
+      style : function() {
+        return {
+          textColor: "tweet-time"
+        }
+      }
+    }
   }
 });

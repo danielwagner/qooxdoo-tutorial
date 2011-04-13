@@ -14,5 +14,6 @@ qx.Theme.define("twitter.theme.Color",
 
   colors :
   {
+    "tweet-time" : "#E0E0E0"
   }
 });
