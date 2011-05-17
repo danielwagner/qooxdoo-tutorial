@@ -84,9 +84,10 @@ qx.Class.define("twitter.Application",
         service.post(msg);
       }, this);
       
-      // create the controller
-      var controller = new qx.data.controller.List(null, main.getList());
-      controller.setDelegate({
+      // setup list binding
+      var list = main.getList();
+      list.setItemHeight(68);
+      list.setDelegate({
         createItem : function() {
           return new twitter.TweetView();  
         },
@@ -111,7 +112,11 @@ qx.Class.define("twitter.Application",
           item.setMinHeight(52);
         }
       });
-      service.bind("tweets", controller, "model");
+      service.bind("tweets", list, "model", {
+        converter : function(value) {
+          return value || new qx.data.Array();
+        }
+      });
       
       service.fetchTweets();
     }

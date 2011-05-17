@@ -51,7 +51,7 @@ qx.Class.define("twitter.MainWindow",
     }, this);    
     
     // list
-    this.__list = new qx.ui.form.List();
+    this.__list = new qx.ui.list.List();
     this.add(this.__list, {row: 1, column: 0, colSpan: 2});
     
     // textarea
