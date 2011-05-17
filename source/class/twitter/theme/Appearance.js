@@ -14,7 +14,16 @@ qx.Theme.define("twitter.theme.Appearance",
 
   appearances :
   {
-    "tweet-view" : {},
+    "tweet-view" :
+    {
+      style : function(states)
+      {
+        return {
+          backgroundColor : states.selected ? "background-selected" : undefined,
+          textColor       : states.selected ? "text-selected" : undefined
+        };
+      }
+    },
     
     "tweet-view/time" : {
       style : function() {
