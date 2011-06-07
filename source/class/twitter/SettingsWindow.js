@@ -14,7 +14,7 @@ qx.Class.define("twitter.SettingsWindow",
 
     var localeManager = qx.locale.Manager.getInstance();
     var locales = localeManager.getAvailableLocales();
-    var currentLocale = localeManager.getLocale();
+    var currentLocale = localeManager.getLanguage();
     
     // mark this for translation (should hold the langauge name)
     this.marktr("$$languagename");
