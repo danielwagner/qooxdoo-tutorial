@@ -21,6 +21,8 @@
     "migration",
     "pretty",
     "profiling",
+    "simulation-build",
+    "simulation-run",
     "source",
     "source-all",
     "test",
@@ -37,18 +39,23 @@
     "LOCALES"      : [ "en" , "de" , "fr", "ro" ],
     "CACHE"        : "${TMPDIR}/cache",
     "ROOT"         : "."
-  }
+  },
+
+  "config-warnings" : 
+  {
+    "job-shadowing" : ["simulation-run"]
+  },
 
   // You only need to edit the remainder of this file, if you want to customize
   // specific jobs, or add own job definitions.
 
-  /*
   "jobs" :
   {
     // Uncomment the following entry to add a contrib or library to your
     // project; make sure to adapt the path to the Manifest.json; if you are
     // using a contrib: library, it will be downloaded into the path specified
     // by the 'cache/downloads' config key
+    /*
     "libraries" : 
     {
       "library" :
@@ -58,10 +65,12 @@
         }
       ]
     },
+    */
 
     // If you want to tweak a job setting, see the following sample where
     // the "format" feature of the "build-script" job is overridden.
     // To see a list of available jobs, invoke 'generate.py x'.
+    /*
     "build-script" :
     {
       "compile-options" : 
@@ -72,6 +81,28 @@
         }
       }
     }
+    */
+
+    "simulation-run" :
+    {
+      "let" :
+      {
+        "SIMULATOR_CLASSPATH" : 
+        [
+          "../selenium-java-2.5.0.jar",
+          "../libs/*",
+          "../js.jar"
+        ]
+      },
+
+      "environment" :
+      {
+        "simulator.selServer"   : "localhost",
+        "simulator.selPort"     : 4444,
+        "simulator.testBrowser" : "*firefox",
+        "simulator.autHost"     : "http://localhost",
+        "simulator.autPath"     : "/qooxdoo-tutorial/build/index.html"
+      }
+    }
   }
-  */
 }
